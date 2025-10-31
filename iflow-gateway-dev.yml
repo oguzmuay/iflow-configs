@@ -1,0 +1,47 @@
+spring:
+  data:
+    redis:
+      host: localhost
+      port: 6379
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      routes:
+        - id: iflow-rest-api
+          uri: lb://iflow  # Eureka'da kayıtlı olan servis adı
+          predicates:
+            - Path=/iflow/**   # istek yolu
+          filters:
+            - StripPrefix=1
+        - id: iflow-engine
+          uri: lb://engine  # Eureka'da kayıtlı olan servis adı
+          predicates:
+            - Path=/engine/**   # istek yolu
+          filters:
+            - StripPrefix=1
+      default-filters:
+        - name: SessionFilter
+
+eureka:
+  client:
+    register-with-eureka: true
+    serviceUrl:
+      defaultZone: "http://localhost:8081/eureka"
+    initial-instance-info-replication-interval-seconds: 5
+    registry-fetch-interval-seconds: 5
+  instance:
+    prefer-ip-address: true
+
+server:
+  port: 8080
+
+security:
+  enable: false
+  default-admin:
+    id: 39746839-fd4c-4609-93aa-6060bc045c5b
+    email: admin@iflow.com
+    roles:
+      - ADMIN
