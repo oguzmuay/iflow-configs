@@ -1,0 +1,41 @@
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  datasource:
+    username: engine_user
+    password: iknow24
+    url: jdbc:postgresql://localhost:5432/iflow_engine
+    driver-class-name: org.postgresql.Driver
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: false
+    service-url:
+      defaultZone: "http://localhost:8081/eureka"
+    initial-instance-info-replication-interval-seconds: 5
+    registry-fetch-interval-seconds: 5
+  instance:
+    prefer-ip-address: true
+
+
+camunda:
+  bpm:
+    job-execution:
+      enabled: true
+    generic-properties:
+      properties:
+        user-resource-whitelist-pattern: "^[a-zA-Z0-9_-]+$"
+    database:
+      schema-update: true
+    enabled: true
+    process-engine-name: default
+    auto-deployment-enabled: true
+
+
+server:
+  port: 0
+grpc:
+  server:
+    port: 0
+
