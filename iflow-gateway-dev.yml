@@ -51,9 +51,9 @@ server:
   port: 8080
 
 security:
-  enable: false
+  enable: true
   default-admin:
-    id: 39746839-fd4c-4609-93aa-6060bc045c5b
+    id: fa372e8b-1e65-4c84-8558-fbd217319d41
     email: admin@iflow.com
     roles:
       - ADMIN
