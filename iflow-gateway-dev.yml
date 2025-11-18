@@ -58,7 +58,7 @@ security:
   jwt:
     secret: K1zsNyPjyYwP1P/WlYKke8BqzAudLfbyTwYMgMVKCIw=
   default-admin:
-    id: fa372e8b-1e65-4c84-8558-fbd217319d41
+    id: fa6ee30d-e476-4435-951f-d43bf84eee05
     email: admin@iflow.com
     roles:
       - ADMIN
