@@ -51,7 +51,10 @@ server:
   port: 8080
 
 security:
+  type: default
   enable: true
+  jwt:
+    secret: K1zsNyPjyYwP1P/WlYKke8BqzAudLfbyTwYMgMVKCIw=
   default-admin:
     id: fa372e8b-1e65-4c84-8558-fbd217319d41
     email: admin@iflow.com
