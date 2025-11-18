@@ -23,7 +23,7 @@ spring:
           filters:
             - StripPrefix=1
       default-filters:
-        - name: SessionFilter
+        - name: GatewaySecurityFilter
 
 eureka:
   client:
