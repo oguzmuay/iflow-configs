@@ -22,6 +22,18 @@ spring:
             - Path=/engine/**   # istek yolu
           filters:
             - StripPrefix=1
+        - id: iflow-identity
+          uri: lb://iflow-identity  # Eureka'da kayıtlı olan servis adı
+          predicates:
+            - Path=/identity/**   # istek yolu
+          filters:
+            - StripPrefix=1
+        - id: iflow-simulator
+          uri: lb://iflow-simulator  # Eureka'da kayıtlı olan servis adı
+          predicates:
+            - Path=/simulator/**   # istek yolu
+          filters:
+            - StripPrefix=1
       default-filters:
         - name: GatewaySecurityFilter
 
