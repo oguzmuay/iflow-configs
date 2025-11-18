@@ -54,6 +54,7 @@ security:
   jwksBaseUrl: http://localhost:8088
   type: default
   enable: true
+  restricted: false
   jwt:
     secret: K1zsNyPjyYwP1P/WlYKke8BqzAudLfbyTwYMgMVKCIw=
   default-admin:
