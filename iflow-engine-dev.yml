@@ -6,6 +6,11 @@ spring:
     password: iknow24
     url: jdbc:postgresql://localhost:5432/iflow_engine
     driver-class-name: org.postgresql.Driver
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          audiences: engine
 
 eureka:
   client:
