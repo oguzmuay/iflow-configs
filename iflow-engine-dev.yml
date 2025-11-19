@@ -27,6 +27,9 @@ eureka:
   instance:
     prefer-ip-address: true
 
+iflow:
+  timer:
+    max-retry-count: 26
 
 camunda:
   bpm:
