@@ -36,4 +36,8 @@ server:
   servlet:
     context-path: /api
 
+iflow:
+  client:
+    secret: iflow-secret
+
 
