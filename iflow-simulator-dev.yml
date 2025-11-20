@@ -7,6 +7,13 @@ spring:
   jpa:
     hibernate:
       ddl-auto: update
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: http://localhost:8088/api/.well-known/jwks.json
+          audiences: iflow-simulator
+          issuer-uri: http://localhost:8088
 eureka:
   client:
     register-with-eureka: true
