@@ -46,7 +46,7 @@ camunda:
     process-engine-name: default
     auto-deployment-enabled: true
 server:
-  port: 0
+  port: 3031
   servlet:
     context-path: /api
 grpc:
