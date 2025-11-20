@@ -27,5 +27,7 @@ server:
   port: 0
   servlet:
     context-path: /api
-
+iflow:
+  client:
+    secret: simulator-secret
 
