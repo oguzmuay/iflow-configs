@@ -1,4 +1,6 @@
 spring:
+  application:
+    name: iflow
   datasource:
     username: engine_user
     password: iknow24
