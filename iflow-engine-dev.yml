@@ -52,4 +52,7 @@ server:
 grpc:
   server:
     port: 0
-
+    
+logging:
+  level:
+    org.springframework.security.web.FilterChainProxy: DEBUG
