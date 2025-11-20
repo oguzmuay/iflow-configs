@@ -47,8 +47,7 @@ camunda:
     auto-deployment-enabled: true
 server:
   port: 3031
-  servlet:
-    context-path: /api
+
 grpc:
   server:
     port: 0
