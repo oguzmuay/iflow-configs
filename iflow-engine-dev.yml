@@ -57,3 +57,4 @@ logging:
   level:
     org.springframework.security.web.FilterChainProxy: DEBUG
     org.springframework.security.oauth2: DEBUG
+    org.springframework.security: DEBUG
