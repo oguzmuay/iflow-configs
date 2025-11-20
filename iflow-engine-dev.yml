@@ -1,4 +1,6 @@
 spring:
+  application:
+    name: iflow-engine
   main:
     allow-bean-definition-overriding: true
   datasource:
