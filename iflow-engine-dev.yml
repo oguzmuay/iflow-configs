@@ -35,6 +35,8 @@ iflow:
 
 camunda:
   bpm:
+    history-level-default: full
+    history-level: full
     job-execution:
       enabled: true
     generic-properties:
