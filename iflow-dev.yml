@@ -22,6 +22,7 @@ minio:
   secret-key: minioadmin
   bucket: iflow
   deploy-bucket: iflow-deploy
+  svg-bucket: iflow-svg
 eureka:
   client:
     register-with-eureka: true
