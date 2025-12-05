@@ -95,3 +95,25 @@ security:
     email: admin@iflow.com
     roles:
       - ADMIN
+      
+logging:
+  level:
+    root: INFO
+
+    # Spring Cloud Gateway genel
+    org.springframework.cloud.gateway: DEBUG
+
+    # RateLimiter detayları
+    org.springframework.cloud.gateway.filter.ratelimit: TRACE
+
+    # Route / predicate çözümü
+    org.springframework.cloud.gateway.handler: DEBUG
+
+    # Senin kodların
+    com.iflow.gateway: DEBUG
+
+    # Redis çağrıları
+    org.springframework.data.redis: DEBUG
+
+    # Netty HTTP logları (istek/cevap)
+    reactor.netty: DEBUG
