@@ -25,7 +25,7 @@ spring:
                 # hangi key ile limitlenecek?
                 key-resolver: "#{@clientIdKeyResolver}"
         - id: iflow-engine
-          uri: lb://engine  # Eureka'da kayıtlı olan servis adı
+          uri: lb://iflow-engine  # Eureka'da kayıtlı olan servis adı
           predicates:
             - Path=/engine/**   # istek yolu
             - Path=/iflow-engine/**   # istek yolu
