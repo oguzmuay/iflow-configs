@@ -9,13 +9,6 @@ spring:
         locator:
           enabled: true
           lower-case-service-id: true
-          filters:
-            - StripPrefix=1
-            - name: RequestRateLimiter
-              args:
-                redis-rate-limiter.replenishRate: 50
-                redis-rate-limiter.burstCapacity: 100
-                key-resolver: "#{@clientIdKeyResolver}"
       routes:
         - id: iflow-rest-api
           uri: lb://iflow  # Eureka'da kayıtlı olan servis adı
@@ -42,12 +35,7 @@ spring:
           filters:
             - StripPrefix=1
       default-filters:
-        - name: GatewaySecurityFilter
-        - name: RequestRateLimiter
-          args:
-            redis-rate-limiter.replenishRate: 50
-            redis-rate-limiter.burstCapacity: 100
-            key-resolver: "#{@clientIdKeyResolver}"      
+        - name: GatewaySecurityFilter   
 
 eureka:
   client:
