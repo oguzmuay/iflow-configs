@@ -95,3 +95,10 @@ security:
     email: admin@iflow.com
     roles:
       - ADMIN    
+      
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
+    org.springframework.cloud.gateway.filter.ratelimit: TRACE
+    org.springframework.data.redis: DEBUG
+
