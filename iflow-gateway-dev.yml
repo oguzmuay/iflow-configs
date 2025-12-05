@@ -17,14 +17,13 @@ spring:
             - Path=/iflow-engine/**   # istek yolu
           filters:
             - StripPrefix=1
-            - name: RequestRateLimiter
-              args:
-                # saniyede kaç token üretilecek
-                redis-rate-limiter.replenishRate: 50
-                # burst kapasitesi
-                redis-rate-limiter.burstCapacity: 100
-                # hangi key ile limitlenecek?
-                key-resolver: "#{@clientIdKeyResolver}"
+        - id: iflow-identity
+          uri: lb://iflow-identity  # Eureka'da kayıtlı olan servis adı
+          predicates:
+            - Path=/identity/**   # istek yolu
+            - Path=/iflow-identity/**   # istek yolu
+          filters:
+            - StripPrefix=1
       default-filters:
         - name: GatewaySecurityFilter
         - name: RequestRateLimiter
