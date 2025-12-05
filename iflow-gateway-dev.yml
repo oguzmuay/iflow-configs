@@ -10,20 +10,30 @@ spring:
           enabled: true
           lower-case-service-id: true
       routes:
+         - id: iflow-rest-api
+          uri: lb://iflow  # Eureka'da kayıtlı olan servis adı
+          predicates:
+            - Path=/iflow/**   # istek yolu
+          filters:
+            - StripPrefix=1
         - id: iflow-engine
-          uri: lb://iflow-engine  # Eureka'da kayıtlı olan servis adı
+          uri: lb://engine  # Eureka'da kayıtlı olan servis adı
           predicates:
             - Path=/engine/**   # istek yolu
-            - Path=/iflow-engine/**   # istek yolu
           filters:
             - StripPrefix=1
         - id: iflow-identity
           uri: lb://iflow-identity  # Eureka'da kayıtlı olan servis adı
-          filters:
-            - StripPrefix=1
           predicates:
             - Path=/identity/**   # istek yolu
-            - Path=/iflow-identity/**   # istek yolu
+          filters:
+            - StripPrefix=1
+        - id: iflow-simulator
+          uri: lb://iflow-simulator  # Eureka'da kayıtlı olan servis adı
+          predicates:
+            - Path=/simulator/**   # istek yolu
+          filters:
+            - StripPrefix=1
       default-filters:
         - name: GatewaySecurityFilter
         - name: RequestRateLimiter
