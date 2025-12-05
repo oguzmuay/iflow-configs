@@ -16,10 +16,26 @@ spring:
             - Path=/iflow/**   # istek yolu
           filters:
             - StripPrefix=1
+            - name: RequestRateLimiter
+              args:
+                # saniyede kaç token üretilecek
+                redis-rate-limiter.replenishRate: 50
+                # burst kapasitesi
+                redis-rate-limiter.burstCapacity: 100
+                # hangi key ile limitlenecek?
+                key-resolver: "#{@clientIdKeyResolver}"
         - id: iflow-engine
           uri: lb://engine  # Eureka'da kayıtlı olan servis adı
           predicates:
             - Path=/engine/**   # istek yolu
+            - name: RequestRateLimiter
+              args:
+                # saniyede kaç token üretilecek
+                redis-rate-limiter.replenishRate: 50
+                # burst kapasitesi
+                redis-rate-limiter.burstCapacity: 100
+                # hangi key ile limitlenecek?
+                key-resolver: "#{@clientIdKeyResolver}"
           filters:
             - StripPrefix=1
         - id: iflow-identity
@@ -28,22 +44,30 @@ spring:
             - Path=/identity/**   # istek yolu
           filters:
             - StripPrefix=1
+            - name: RequestRateLimiter
+              args:
+                # saniyede kaç token üretilecek
+                redis-rate-limiter.replenishRate: 50
+                # burst kapasitesi
+                redis-rate-limiter.burstCapacity: 100
+                # hangi key ile limitlenecek?
+                key-resolver: "#{@clientIdKeyResolver}"
         - id: iflow-simulator
           uri: lb://iflow-simulator  # Eureka'da kayıtlı olan servis adı
           predicates:
             - Path=/simulator/**   # istek yolu
           filters:
             - StripPrefix=1
+            - name: RequestRateLimiter
+              args:
+                # saniyede kaç token üretilecek
+                redis-rate-limiter.replenishRate: 50
+                # burst kapasitesi
+                redis-rate-limiter.burstCapacity: 100
+                # hangi key ile limitlenecek?
+                key-resolver: "#{@clientIdKeyResolver}"
       default-filters:
         - name: GatewaySecurityFilter
-        - name: RequestRateLimiter
-          args:
-            # saniyede kaç token üretilecek
-            redis-rate-limiter.replenishRate: 50
-            # burst kapasitesi
-            redis-rate-limiter.burstCapacity: 100
-            # hangi key ile limitlenecek?
-            key-resolver: "#{@clientIdKeyResolver}"
 
 eureka:
   client:
