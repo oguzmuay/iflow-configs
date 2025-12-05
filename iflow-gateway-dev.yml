@@ -15,13 +15,16 @@ spring:
           predicates:
             - Path=/engine/**   # istek yolu
             - Path=/iflow-engine/**   # istek yolu
+          filters:
+            - StripPrefix=1
         - id: iflow-identity
           uri: lb://iflow-identity  # Eureka'da kayıtlı olan servis adı
+          filters:
+            - StripPrefix=1
           predicates:
             - Path=/identity/**   # istek yolu
             - Path=/iflow-identity/**   # istek yolu
       default-filters:
-        - StripPrefix=1
         - name: GatewaySecurityFilter
         - name: RequestRateLimiter
           args:
