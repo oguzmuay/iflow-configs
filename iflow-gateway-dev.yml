@@ -100,14 +100,14 @@ logging:
   level:
     root: INFO
 
-    # Spring Cloud Gateway genel
-    org.springframework.cloud.gateway: DEBUG
+    # # Spring Cloud Gateway genel
+    # org.springframework.cloud.gateway: DEBUG
 
     # RateLimiter detayları
-    org.springframework.cloud.gateway.filter.ratelimit: TRACE
+    org.springframework.cloud.gateway.filter.ratelimit: DEBUG
 
-    # Route / predicate çözümü
-    org.springframework.cloud.gateway.handler: DEBUG
+    # # Route / predicate çözümü
+    # org.springframework.cloud.gateway.handler: DEBUG
 
     # Senin kodların
     com.iflow.gateway: DEBUG
@@ -115,5 +115,5 @@ logging:
     # Redis çağrıları
     org.springframework.data.redis: DEBUG
 
-    # Netty HTTP logları (istek/cevap)
-    reactor.netty: DEBUG
+    # # Netty HTTP logları (istek/cevap)
+    # reactor.netty: DEBUG
