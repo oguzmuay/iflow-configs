@@ -28,6 +28,8 @@ spring:
           uri: lb://engine  # Eureka'da kayıtlı olan servis adı
           predicates:
             - Path=/engine/**   # istek yolu
+          filters:
+            - StripPrefix=1
             - name: RequestRateLimiter
               args:
                 # saniyede kaç token üretilecek
@@ -36,8 +38,6 @@ spring:
                 redis-rate-limiter.burstCapacity: 100
                 # hangi key ile limitlenecek?
                 key-resolver: "#{@clientIdKeyResolver}"
-          filters:
-            - StripPrefix=1
         - id: iflow-identity
           uri: lb://iflow-identity  # Eureka'da kayıtlı olan servis adı
           predicates:
