@@ -7,23 +7,9 @@ spring:
     gateway:
       discovery:
         locator:
-          enabled: false
+          enabled: true
           lower-case-service-id: true
       routes:
-        - id: iflow-rest-api
-          uri: lb://iflow  # Eureka'da kayıtlı olan servis adı
-          predicates:
-            - Path=/iflow/**   # istek yolu
-          filters:
-            - StripPrefix=1
-            - name: RequestRateLimiter
-              args:
-                # saniyede kaç token üretilecek
-                redis-rate-limiter.replenishRate: 50
-                # burst kapasitesi
-                redis-rate-limiter.burstCapacity: 100
-                # hangi key ile limitlenecek?
-                key-resolver: "#{@clientIdKeyResolver}"
         - id: iflow-engine
           uri: lb://iflow-engine  # Eureka'da kayıtlı olan servis adı
           predicates:
@@ -39,36 +25,13 @@ spring:
                 redis-rate-limiter.burstCapacity: 100
                 # hangi key ile limitlenecek?
                 key-resolver: "#{@clientIdKeyResolver}"
-        - id: iflow-identity
-          uri: lb://iflow-identity  # Eureka'da kayıtlı olan servis adı
-          predicates:
-            - Path=/identity/**   # istek yolu
-          filters:
-            - StripPrefix=1
-            - name: RequestRateLimiter
-              args:
-                # saniyede kaç token üretilecek
-                redis-rate-limiter.replenishRate: 50
-                # burst kapasitesi
-                redis-rate-limiter.burstCapacity: 100
-                # hangi key ile limitlenecek?
-                key-resolver: "#{@clientIdKeyResolver}"
-        - id: iflow-simulator
-          uri: lb://iflow-simulator  # Eureka'da kayıtlı olan servis adı
-          predicates:
-            - Path=/simulator/**   # istek yolu
-          filters:
-            - StripPrefix=1
-            - name: RequestRateLimiter
-              args:
-                # saniyede kaç token üretilecek
-                redis-rate-limiter.replenishRate: 50
-                # burst kapasitesi
-                redis-rate-limiter.burstCapacity: 100
-                # hangi key ile limitlenecek?
-                key-resolver: "#{@clientIdKeyResolver}"
       default-filters:
         - name: GatewaySecurityFilter
+        - name: RequestRateLimiter
+          args:
+            redis-rate-limiter.replenishRate: 50
+            redis-rate-limiter.burstCapacity: 100
+            key-resolver: "#{@clientIdKeyResolver}"      
 
 eureka:
   client:
@@ -96,9 +59,3 @@ security:
     roles:
       - ADMIN    
       
-logging:
-  level:
-    org.springframework.cloud.gateway: DEBUG
-    org.springframework.cloud.gateway.filter.ratelimit: TRACE
-    org.springframework.data.redis: DEBUG
-
