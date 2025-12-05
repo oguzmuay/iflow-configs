@@ -62,4 +62,8 @@ security:
     email: admin@iflow.com
     roles:
       - ADMIN    
+rate-limit:
+  disabled: false
+  burst-capacity: 30
+  window-seconds: 30
       
