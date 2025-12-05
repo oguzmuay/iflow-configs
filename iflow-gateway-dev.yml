@@ -36,6 +36,14 @@ spring:
             - StripPrefix=1
       default-filters:
         - name: GatewaySecurityFilter
+        - name: RequestRateLimiter
+              args:
+                # saniyede kaç token üretilecek
+                redis-rate-limiter.replenishRate: 50
+                # burst kapasitesi
+                redis-rate-limiter.burstCapacity: 100
+                # hangi key ile limitlenecek?
+                key-resolver: "#{@clientIdKeyResolver}"
 
 eureka:
   client:
