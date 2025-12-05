@@ -28,6 +28,7 @@ spring:
           uri: lb://engine  # Eureka'da kayıtlı olan servis adı
           predicates:
             - Path=/engine/**   # istek yolu
+            - Path=/iflow-engine/**   # istek yolu
           filters:
             - StripPrefix=1
             - name: RequestRateLimiter
