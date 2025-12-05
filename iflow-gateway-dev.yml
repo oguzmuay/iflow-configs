@@ -10,7 +10,7 @@ spring:
           enabled: true
           lower-case-service-id: true
       routes:
-         - id: iflow-rest-api
+        - id: iflow-rest-api
           uri: lb://iflow  # Eureka'da kayıtlı olan servis adı
           predicates:
             - Path=/iflow/**   # istek yolu
