@@ -65,5 +65,5 @@ security:
 rate-limit:
   disabled: false
   burst-capacity: 30
-  window-seconds: 30
+  window-seconds: 1
       
