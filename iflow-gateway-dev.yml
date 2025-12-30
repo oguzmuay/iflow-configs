@@ -31,7 +31,7 @@ spring:
         - id: iflow-simulator
           uri: lb://iflow-simulator  # Eureka'da kayıtlı olan servis adı
           predicates:
-            - Path=/simulator/**   # istek yolu
+            - Path=/simulator/**, /iflow-simulator/**
           filters:
             - StripPrefix=1
       default-filters:
