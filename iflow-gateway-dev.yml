@@ -1,4 +1,6 @@
 spring:
+  application:
+    name: iflow-gateway
   data:
     redis:
       host: localhost
