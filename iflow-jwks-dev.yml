@@ -1,0 +1,39 @@
+spring:
+  application:
+    name: iflow-jwks
+  datasource:
+    username: engine_user
+    password: iknow24
+    url: jdbc:postgresql://localhost:5432/iflow_jwks
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+eureka:
+  client:
+    enabled: false
+    refresh:
+      enable: false
+
+server:
+  port: 8088
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+
+jwks:
+  issuer: "http://localhost:8088"
+  rotation:
+    cron: "0 0 3 * * MON" # Every Monday 03:00 server time
+    keep-previous-days: 2 # Keep retired keys for 2 days for validation
+  token-ttl-minute: 60
+  service-secrets:
+    iflow: "iflow-secret"
+    iflow-engine: "engine-secret"
+    iflow-identity: "identity-secret"
+    iflow-simulator: "simulator-secret"
+
+
