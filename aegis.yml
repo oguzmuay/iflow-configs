@@ -31,8 +31,6 @@ eureka:
     prefer-ip-address: true
 server:
   port: 0
-  servlet:
-    context-path: /api
 iflow:
   security:
     secret-key: K1zsNyPjyYwP1P/WlYKke8BqzAudLfbyTwYMgMVKCIw=
