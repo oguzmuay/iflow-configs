@@ -12,7 +12,7 @@ spring:
       resourceserver:
         jwt:
           jwk-set-uri: http://localhost:8088/api/.well-known/jwks.json
-          audiences: iflow-simulator
+          audiences: oracle
           issuer-uri: http://localhost:8088
 eureka:
   client:
