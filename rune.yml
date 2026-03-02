@@ -33,7 +33,7 @@ jwks:
   service-secrets:
     iflow: "iflow-secret"
     iflow-engine: "engine-secret"
-    iflow-identity: "identity-secret"
+    aegis: "aegis-secret"
     iflow-simulator: "simulator-secret"
 
 
