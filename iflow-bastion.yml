@@ -11,33 +11,6 @@ spring:
         locator:
           enabled: true
           lower-case-service-id: true
-      routes:
-        - id: iflow-rest-api
-          uri: lb://iflow  # Eureka'da kayıtlı olan servis adı
-          predicates:
-            - Path=/iflow/**   # istek yolu
-          filters:
-            - StripPrefix=1
-        - id: iflow-engine
-          uri: lb://engine  # Eureka'da kayıtlı olan servis adı
-          predicates:
-            - Path=/engine/**   # istek yolu
-          filters:
-            - StripPrefix=1
-        - id: iflow-identity
-          uri: lb://iflow-identity  # Eureka'da kayıtlı olan servis adı
-          predicates:
-            - Path=/identity/**   # istek yolu
-          filters:
-            - StripPrefix=1
-        - id: iflow-simulator
-          uri: lb://iflow-simulator  # Eureka'da kayıtlı olan servis adı
-          predicates:
-            - Path=/simulator/**, /iflow-simulator/**
-          filters:
-            - StripPrefix=1
-      default-filters:
-        - name: GatewaySecurityFilter   
 
 eureka:
   client:
