@@ -35,6 +35,8 @@ eureka:
 
 
 server:
+  servlet:
+    context-path: /api
   port: 0
 
 iflow:
