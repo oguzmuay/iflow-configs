@@ -32,8 +32,8 @@ jwks:
   token-ttl-minute: 60
   service-secrets:
     iflow: "iflow-secret"
-    iflow-engine: "engine-secret"
+    primum: "engine-secret"
     aegis: "aegis-secret"
-    iflow-simulator: "simulator-secret"
+    oracle: "simulator-secret"
 
 
