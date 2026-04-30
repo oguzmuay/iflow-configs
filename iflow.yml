@@ -4,7 +4,7 @@ spring:
   datasource:
     username: engine_user
     password: iknow24
-    url: jdbc:postgresql://localhost:5432/iflow
+    url: jdbc:postgresql://192.168.1.14:5432/iflow
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
