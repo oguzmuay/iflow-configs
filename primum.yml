@@ -6,7 +6,7 @@ spring:
   datasource:
     username: engine_user
     password: iknow24
-    url: jdbc:postgresql://localhost:5432/iflow_engine
+    url: jdbc:postgresql://192.168.1.14:5432/iflow_engine
     driver-class-name: org.postgresql.Driver
   security:
     oauth2:
