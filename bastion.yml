@@ -3,7 +3,7 @@ spring:
     name: iflow-gateway
   data:
     redis:
-      host: localhost
+      host: 192.168.1.14
       port: 6379
   cloud:
     gateway:
