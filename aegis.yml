@@ -1,6 +1,6 @@
 spring:
   application:
-    name: iflow-aegis
+    name: aegis
   datasource:
     username: engine_user
     password: iknow24
