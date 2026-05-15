@@ -1,6 +1,6 @@
 spring:
   application:
-    name: iflow-jwks
+    name: rune
   datasource:
     username: engine_user
     password: iknow24
