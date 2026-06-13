@@ -1,10 +1,10 @@
 spring:
   application:
-    name: aegis
+    name: lore
   datasource:
     username: engine_user
     password: iknow24
-    url: jdbc:postgresql://192.168.1.13:5432/iflow_identity
+    url: jdbc:postgresql://192.168.1.13:5432/iflow_lore
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
@@ -17,8 +17,7 @@ spring:
         jwt:
           jwk-set-uri: http://localhost:8088/api/.well-known/jwks.json
           audiences:
-            - aegis
-            - identity
+            - lore
           issuer-uri: http://localhost:8088
 eureka:
   client:
@@ -30,7 +29,7 @@ eureka:
   instance:
     prefer-ip-address: true
 server:
-  port: 0
+  port: ${SERVER_PORT:8097}
 iflow:
   security:
     secret-key: K1zsNyPjyYwP1P/WlYKke8BqzAudLfbyTwYMgMVKCIw=
