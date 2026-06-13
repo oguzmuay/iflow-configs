@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: aegis
+  datasource:
+    username: engine_user
+    password: iknow24
+    url: jdbc:postgresql://192.168.1.13:5432/iflow_identity
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+  properties:
+    hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: http://localhost:8088/api/.well-known/jwks.json
+          audiences:
+            - aegis
+            - identity
+          issuer-uri: http://localhost:8088
+eureka:
+  client:
+    register-with-eureka: true
+    service-url:
+      defaultZone: "http://localhost:8081/eureka"
+    initial-instance-info-replication-interval-seconds: 5
+    registry-fetch-interval-seconds: 5
+  instance:
+    prefer-ip-address: true
+server:
+  port: 0
+iflow:
+  security:
+    secret-key: K1zsNyPjyYwP1P/WlYKke8BqzAudLfbyTwYMgMVKCIw=
