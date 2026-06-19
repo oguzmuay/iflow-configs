@@ -30,10 +30,22 @@ jwks:
     cron: "0 0 3 * * MON" # Every Monday 03:00 server time
     keep-previous-days: 2 # Keep retired keys for 2 days for validation
   token-ttl-minute: 60
-  service-secrets:
-    iflow: "iflow-secret"
-    primum: "engine-secret"
-    aegis: "aegis-secret"
-    oracle: "simulator-secret"
+  service-clients:
+      - client-id: iflow
+        secret: "iflow-secret"
+        name: "IFlow"
+        description: "IFlow main REST API"
+      - client-id: primum
+        secret: "engine-secret"
+        name: "IFlow Primum"
+        description: "IFlow BPMN engine"
+      - client-id: aegis
+        secret: "aegis-secret"
+        name: "IFlow Aegis"
+        description: "IFlow identity & access management"
+      - client-id: oracle
+        secret: "simulator-secret"
+        name: "IFlow Oracle"
+        description: "IFlow process simulation"
 
 
