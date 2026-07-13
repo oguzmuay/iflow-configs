@@ -47,5 +47,9 @@ jwks:
         secret: "simulator-secret"
         name: "IFlow Oracle"
         description: "IFlow process simulation"
+      - client-id: vault
+        secret: "vault-secret"
+        name: "IFlow Vault"
+        description: "IFlow File Manager Service"
 
 
