@@ -54,7 +54,7 @@ jwks:
         name: "IFlow Vault"
         description: "IFlow File Manager Service"
       - client-id: saga
-        secret: "saga-secret"                                                                                                                                                                                              
+        secret: "saga-secret"
         scopes: [inner.primum]
 
 
