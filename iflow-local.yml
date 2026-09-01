@@ -40,7 +40,7 @@ server:
   port: 0
 
 iflow:
-  client:
-    secret: iflow-secret
+  envoy:
+    client-secret: iflow-secret
 
 
