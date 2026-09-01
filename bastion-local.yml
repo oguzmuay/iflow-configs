@@ -27,14 +27,6 @@ server:
 
 security:
   jwksBaseUrl: http://localhost:8088
-  type: default
-  enable: true
-  restricted: false
   jwt:
-    secret: K1zsNyPjyYwP1P/WlYKke8BqzAudLfbyTwYMgMVKCIw=
-  default-admin:
-    id: fa6ee30d-e476-4435-951f-d43bf84eee05
-    email: admin@iflow.com
-    roles:
-      - ADMIN    
+    secret: K1zsNyPjyYwP1P/WlYKke8BqzAudLfbyTwYMgMVKCIw=  
       
