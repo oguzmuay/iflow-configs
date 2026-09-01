@@ -28,5 +28,5 @@ server:
   servlet:
     context-path: /api
 iflow:
-  client:
-    secret: saga-secret
+  envoy:
+    client-secret: saga-secret
