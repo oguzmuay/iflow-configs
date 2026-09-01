@@ -36,5 +36,8 @@ eureka:
     registry-fetch-interval-seconds: 5
   instance:
     prefer-ip-address: true
+iflow:
+  envoy:
+    client-secret:
 server:
   port: 0
