@@ -33,6 +33,7 @@ jwks:
   service-clients:
       - client-id: iflow
         secret: "iflow-secret"
+        scopes: [inner.primum, inner.lore]
         name: "IFlow"
         description: "IFlow main REST API"
       - client-id: primum
@@ -46,10 +47,14 @@ jwks:
       - client-id: oracle
         secret: "simulator-secret"
         name: "IFlow Oracle"
+        scopes: [inner.primum]
         description: "IFlow process simulation"
       - client-id: vault
         secret: "vault-secret"
         name: "IFlow Vault"
         description: "IFlow File Manager Service"
+      - client-id: saga
+        secret: "saga-secret"                                                                                                                                                                                              
+        scopes: [inner.primum]
 
 
