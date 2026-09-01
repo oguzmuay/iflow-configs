@@ -28,6 +28,6 @@ server:
   servlet:
     context-path: /api
 iflow:
-  client:
-    secret: simulator-secret
+  envoy:
+    client-secret: simulator-secret
 
