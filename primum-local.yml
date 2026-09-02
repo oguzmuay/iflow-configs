@@ -1,6 +1,10 @@
 spring:
   application:
     name: primum
+  data:
+    redis:
+      host: 192.168.1.13
+      port: 6379
   main:
     allow-bean-definition-overriding: true
   datasource:
