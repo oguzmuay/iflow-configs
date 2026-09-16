@@ -1,0 +1,22 @@
+  spring:                                                                                                                                                
+    datasource:                                                                                                                                          
+      url: jdbc:postgresql://192.168.1.13:5432/cairn
+      username: engine_user
+      password: iknow24
+      driver-class-name: org.postgresql.Driver                                                                                                     
+      hikari:                                                                                                           
+        pool-name: cairn-pool
+        maximum-pool-size: ${DB_POOL_SIZE:5}
+        minimum-idle: 1
+    jpa:                                                                                                                                          
+      hibernate:
+        ddl-auto: validate
+      properties:
+        hibernate:
+          dialect: org.hibernate.dialect.PostgreSQLDialect
+    flyway:
+      enabled: true
+      locations: classpath:db/migration
+      table: flyway_schema_history_cairn
+      baseline-on-migrate: true
+      baseline-version: 0
