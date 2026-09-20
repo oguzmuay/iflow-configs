@@ -58,6 +58,6 @@ jwks:
         scopes: [inner.primum]
       - client-id: scribe
         secret: "scribe-secret"
-        scopes: [inner.primum]
+        scopes: [inner.primum,inner.vault]
 
 
