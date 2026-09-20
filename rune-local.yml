@@ -56,5 +56,8 @@ jwks:
       - client-id: saga
         secret: "saga-secret"
         scopes: [inner.primum]
+      - client-id: scribe
+        secret: "scribe-secret"
+        scopes: [inner.primum]
 
 
